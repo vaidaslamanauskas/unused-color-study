@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon">
+
+<script>
+(function titleScroller(text) {
+  document.title = text;
+  setTimeout(function () {
+    titleScroller(text.substr(1) + text.substr(0, 1));
+  }, 500);
+}('The research archive on how to design for a more sustainable web • '));
+</script>
+
+<script>
+function getRandomNumberBetween(min,max){
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+function randomColor() {
+  var color = 'hsl(' + getRandomNumberBetween(1,360) + ', 100%, 69%)';
+  console.log(color);
+  return color;
+};
+
+var favicon = document.querySelector("link[rel='icon']");
+
+setInterval(() => {
+  favicon.href = generateFavicon();
+}, 2000);
+
+const generateFavicon = color => {
+  const canvas = document.createElement("canvas");
+  canvas.width = 16;
+  canvas.height = 16;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = randomColor();
+  ctx.fillRect(0, 0, 16, 16);
+  return canvas.toDataURL("image/x-icon");
+};
+</script>
+
+<script>
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  window.location.href = 'links.html';
+}
+</script>
+</head>
+
+<frameset cols="480, *">
+  <frame src="links.html" name="links">
+  <frame src="window.html" name="window">
+</frameset>
+
+</html>
