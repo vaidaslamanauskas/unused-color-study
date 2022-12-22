@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  body {
+    font-family: 'SF Pro Display','-apple-system','BlinkMacSystemFont','San Francisco','Helvetica Neue','Helvetica','Ubuntu','Noto','Segoe UI','Arial',sans-serif;
+    font-size: 18px;
+    background-color: black;
+  }
+
+  body > marquee {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 360px;
+    height: 520px;
+    overflow: hidden;
+    color: grey;
+    border: 1px solid;
+    border-color: grey;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+  }
+</style>
+</head>
+<body>
+
+<marquee direction="right" behavior="alternate">
+  <marquee direction="down" width="35" height="500" scrollamount="14"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="26"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="54"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="13"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="42"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="54"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="10"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="41"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="44"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="26"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="14"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="54"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="13"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="37"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="53"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="11"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="42"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="54"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="17"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="50"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="30"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="12"><font>rain</font></marquee>
+  <marquee direction="down" width="35" height="500" scrollamount="52"><font>rain</font></marquee>
+</marquee>
+
+<script>
+function getRandomNumberBetween(min,max){
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+function randomColor() {
+  var color = 'hsl(' + getRandomNumberBetween(1,360) + ', 100%, 69%)';
+  console.log(color);
+  return color;
+};
+
+var marquees = document.querySelectorAll('marquee');
+
+function render() {
+  for (i = 0; i < marquees.length; i++) {
+    marquees[i].style.color = randomColor();
+    marquees[i].style.borderColor = randomColor();
+  }
+}
+
+setInterval(() => {
+  render();
+}, 2000);
+
+render();
+</script>
+</body>
+</html>
