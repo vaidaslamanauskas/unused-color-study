@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: 'SF Pro Display','-apple-system','BlinkMacSystemFont','San Francisco','Helvetica Neue','Helvetica','Ubuntu','Noto','Segoe UI','Arial',sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  background-color: #d0d0d0;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+header {
+  padding: 13px 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: black;
+}
+
+header > p {
+  display: inline-block;
+  padding-left: 100%;
+  will-change: transform;
+  text-transform: uppercase;
+  color: white;
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  100% {
+    transform: translate(-70%, 0);
+  }
+}
+
+main {
+  display: grid;
+}
+
+main > a {
+  padding: 9px 13px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  border-top: 1px solid black;
+}
+
+main > a p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+main > a span {
+  margin-left: 15px;
+  flex-shrink: 0;
+}
+
+footer {
+  color: black;
+  background-color: #d0d0d0;
+  border-top: 1px solid black;
+}
+
+footer > section {
+  padding: 27px 27px;
+}
+
+footer > section p + p {
+  margin-top: 15px;
+}
